@@ -1,0 +1,196 @@
+<html>
+    <head>
+     <title>Pizza Website - HomePage</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+     <style>
+ #top{
+           
+           height: 100px;
+           display: flex;
+           justify-content: space-around;
+           padding: 7px;
+           background-color: rgba(0,0,0,0.5);
+           border-radius: 20px;
+          }
+          #top1{
+            width: 30%;
+            height: 100px;
+           
+          }
+          #top2{
+            width: 60%;
+            height: 100px;
+           
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+          }
+          #top2a,#top2b,#top2c,#top2d{
+           background-color: rgba(0,0,0,0.6);
+           box-shadow: 10px 10px 10px black;
+           border-radius: 20px;
+           width: 20%;
+           height: 70%;
+           color: white;
+           font-weight: 700px;
+           font-size: 22px;
+           text-align: center;
+           padding-top: 20px;
+           text-decoration: underline;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           transition: 0.5s;
+          }
+          #top2a:hover,#top2b:hover,#top2c:hover,#top2d:hover{
+           background-color: rgba(0,0,0,0.8);
+          }
+          a{
+           color:inherit;
+          }
+          #questionbox,#questionbox2{
+            width: 350px;
+            height: 190px;
+           
+            margin-left: 500px;
+            margin-top: 100px;
+            display: none;
+          }
+          #question,#question2{
+            height: 50px;
+            background-color: rgb(21, 19, 19, 0.5);
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            padding-left: 10px;
+            
+        }
+          #options,#options2{
+            height: 136px;
+            border: 2px solid black;
+            background-color: antiquewhite;
+        }
+         
+          #btn1{
+            width: 150px;
+            height: 50px;
+            border: 2px solid black;
+            margin-left: 570px;
+            margin-top: 50px;
+            text-align: center;
+            border-radius: 30px;
+            color: lightgreen;
+            font-size: 22px;
+            font-weight: 700;
+          }
+          #test,#test2,#endquiz{
+            border-radius: 30px;
+            width: 120px;
+            height: 30px;
+            margin-left: 530px;
+            margin-top: 10px;
+          }
+
+     </style>
+     </head>
+    <body>
+      <!--div for adding navbar-->
+        <div id="top">
+            <div id="top1">
+              <img src="https://graphicsfamily.com/wp-content/uploads/2020/11/High-School-Logo-on-a-transparent-glass-wall-scaled.jpg" width="60%" height="100%"
+              style="margin-left: 60px" >
+            </div>
+            <div id="top2">
+              <div id="top2a"><a href="#">Home</a></div>
+              <div id="top2b"><a href="Contact us-ABCD school.html">Contact Us</a></div>
+              <div id="top2c"><a href="Gallery.html">Gallery</a></div>
+              <div id="top2d">Our Staff</div>
+            </div>
+        </div>
+        <!--div for adding navbar ends-->
+       
+        <button id="btn1" onclick="start()">Start Quiz</button>
+         <!--div for question1-->
+        <div id="questionbox">
+        <div id="question"><h4>Which one of these is not one of the seven wonders?</h4></div>
+        <div id="options">
+          <form>
+            <input type="radio" name="ok" id="opt1"> Taj Mahal <br><br>
+            <input type="radio"name="ok" id="opt2"> Mt. Everest <br><br>
+            <input type="radio"name="ok" id="opt3"> Eiffel tower <br><br>
+            <input type="radio" name="ok" id="opt4"> Leaning tower of pisa <br><br>
+          </form>
+        </div>
+        
+        </div>
+        <button id="test" onclick="testing()"> Submitt</button>
+         <!--div for question1 ends heress-->
+         <!--div for question2-->
+        <div id="questionbox2">
+          <div id="question2"><h4>Which one is a cold color?</h4></div>
+          <div id="options2">
+            <form>
+              <input type="radio" name="ok" id="opt5">Red <br><br>
+              <input type="radio"name="ok" id="opt6"> Blue <br><br>
+              <input type="radio"name="ok" id="opt7">Yellow <br><br>
+              <input type="radio" name="ok" id="opt8"> Orange <br><br>
+            </form>
+          </div>
+          
+          </div>
+          <button id="test2" onclick="testing2()"> Submitt</button>
+           <!--div for question2 ends heress-->
+           <button id="endquiz" onclick="ending()"> End Quiz</button>
+    <script>
+      var score=0;
+            document.getElementById("questionbox").style.display="none";
+            document.getElementById("test").style.display="none";
+            document.getElementById("test2").style.display="none";
+            document.getElementById("endquiz").style.display="none";
+            function start(){
+                document.getElementById("questionbox").style.display="block";
+                document.getElementById("test").style.display="block";
+            }
+            function testing(){
+              if(document.getElementById("opt2").checked){
+              score=score+1;
+              swal("Correct","Mt.Everest is not one of the seven wonders..Your score is " +score,"success");
+            }
+            else{
+              
+              swal("Incorrect","Better luck next time your score is.. "+score,"error");
+            }
+            document.getElementById("questionbox").style.display="none";
+            document.getElementById("questionbox2").style.display="block";
+            document.getElementById("test").style.display="none";
+            document.getElementById("test2").style.display="block";
+          }
+          function testing2(){
+              if(document.getElementById("opt6").checked){
+              score=score+1;
+              swal("Correct","Blue is a solid color..Your score is " +score,"success");
+            }
+            else{
+              
+              swal("Incorrect","Better luck next time your score is.. "+score,"error");
+            }
+            document.getElementById("questionbox2").style.display="none";
+            
+            document.getElementById("test2").style.display="none";
+            document.getElementById("endquiz").style.display="block";
+          }
+          function ending(){
+            if(score==0){
+              document.body.style.backgroundImage="url('https://media.istockphoto.com/illustrations/loser-illustration-id502908165?k=20&m=502908165&s=170667a&w=0&h=5jLDftRvjVN3o1fJLbFxQR4hMhO0uLs-BPcOXSCabh4=')"
+              document.body.style.backgroundSize="100% 100%"
+            }else if(score==1){
+              document.body.style.backgroundImage="url('https://image.shutterstock.com/image-vector/good-job-stampvector-illustration-260nw-773726719.jpg')"
+              document.body.style.backgroundSize="100% 100%"
+            }else if(score==2){
+              document.body.style.backgroundImage="url('https://media.istockphoto.com/vectors/winner-message-word-bubble-in-retro-pop-art-style-on-blue-background-vector-id1135369578?k=20&m=1135369578&s=612x612&w=0&h=nPrM4y7U8H6WTh-I5xjIy1tAHzbC9YOPVl9jsNuOTmo=')"
+              document.body.style.backgroundSize="100% 100%"
+            }
+          }
+          
+        </script>
+    </body>
+</html>
